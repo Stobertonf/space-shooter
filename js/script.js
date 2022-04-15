@@ -14,7 +14,7 @@ function flyAhip(event){
         event.preventDefault();
         fireLaser();
     }
-
+}
 //função de subir
 function moveUp(){
     let topPosition = getComputedStyle(yourShip).getPropertyValue('top'); //devolve o código css
@@ -29,8 +29,16 @@ function moveUp(){
 
  //função de descer
 
-function moveDown(){
+ function moveDown(){
     let topPosition = getComputedStyle(yourShip).getPropertyValue('top'); //devolve o código css
+    if(topPosition === "510px"){
+        return
+    }else {
+        let position = position(topPosition);
+        position += 50;yourShip.style.top = '${position}px'
+    }
 }
+
+window.addEventListener('keydown')
+
    
-}
