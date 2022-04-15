@@ -112,4 +112,13 @@ function moveAlien(alien) {
     }, 30);
 }
 
+
+
+
+
+//starting the game
+startButton.addEventListener('click', (event) => {
+    playGame();
+})
+
 window.addEventListener('keydown')
