@@ -39,6 +39,14 @@ function moveUp(){
     }
 }
 
+//função de atirar em todo mundo
+
+function fireLaser(){
+    let laser = createLaserElement();
+    playArea.appendChild(laser);
+    moveLaser();
+}
+
 window.addEventListener('keydown')
 
    
