@@ -147,4 +147,20 @@ startButton.addEventListener('click', (event) => {
     playGame();
 })
 
+//função de game over
+function gameOver() {
+    window.removeEventListener('keydown', flyShip);
+    clearInterval(alienInterval);
+    let aliens = document.querySelectorAll('.alien');
+    aliens.forEach((alien) => alien.remove());
+    let lasers = document.querySelectorAll('.laser');
+    lasers.forEach((laser) => laser.remove());
+    setTimeout(() => {
+        alert('game over!');
+        yourShip.style.top = "250px";
+        startButton.style.display = "block";
+        instructionsText.style.display = "block";
+    });
+}
+
 window.addEventListener('keydown', flyShip)
