@@ -33,7 +33,7 @@ function moveUp() {
 
 //função de descer
 function moveDown() {
-    let topPosition = getComputedStyle(yourShip).getPropertyValue('top');
+    let topPosition = getComputedStyle(yourShip).getPropertyValue('top'); //devolve o código css
     if(topPosition === "510px"){
         return
     } else {
@@ -81,6 +81,19 @@ function moveLaser(laser) {
             laser.style.left = `${xPosition + 8}px`;
         }
     }, 10);
+}
+
+//função que cria os inimigos aleatoriamente
+function createAliens() {
+    let newAlien = document.createElement('img');
+    let alienSprite = aliensImg[Math.floor(Math.random() * aliensImg.length)]; //sorteio de imagens
+    newAlien.src = alienSprite;
+    newAlien.classList.add('alien');
+    newAlien.classList.add('alien-transition');
+    newAlien.style.left = '370px';
+    newAlien.style.top = `${Math.floor(Math.random() * 330) + 30}px`;
+    playArea.appendChild(newAlien);
+    moveAlien(newAlien);
 }
 
 window.addEventListener('keydown')
