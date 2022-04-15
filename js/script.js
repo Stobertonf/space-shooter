@@ -47,6 +47,18 @@ function fireLaser(){
     moveLaser();
 }
 
+function createLaserElement(){
+    let xPosition = parseInt(window.getComputedStyle(yourShip).getPropertyValue('left'));
+    let yPosition = parseInt(window.getComputedStyle(yourShip).getPropertyValue('top'));
+    let newLaser = document.createElement('img');
+    newLaser.scr = 'img/shoot.png';
+    newLaser.classList.add('laser');//classe para estilizar no css
+    newLaser.style.left = '${xPosition}px'; //selecionando position do tiro
+    newLaser.style.topseft = '${yPosition - 10}px';
+    return newLaser;
+    
+}
+
 window.addEventListener('keydown')
 
    
