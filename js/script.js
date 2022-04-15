@@ -1,6 +1,6 @@
 const yourShip = document.querySelector('.player-shooter');
 const playArea = document.querySelector('#main-play-area');
-const aliensImg = ['img/monster-1.png', 'img/monster-2.png', 'img/monster-3.png'];
+const aliensImg = ['imgs/monster-1.png', 'imgs/monster-2.png', 'imgs/monster-3.png'];
 const instructionsText = document.querySelector('.game-instructions');
 const startButton = document.querySelector('.start-button');
 let alienInterval;
@@ -132,10 +132,19 @@ function checkLaserCollision(laser, alien) {
 }
 
 
+//função playGame
+function playGame() {
+    startButton.style.display = 'none';
+    instructionsText.style.display = 'none';
+    window.addEventListener('keydown', flyShip);
+    alienInterval = setInterval(() => {
+        createAliens();
+    }, 2000);
+}
 
 //starting the game
 startButton.addEventListener('click', (event) => {
     playGame();
 })
 
-window.addEventListener('keydown')
+window.addEventListener('keydown', flyShip)
