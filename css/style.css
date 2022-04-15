@@ -1,0 +1,26 @@
+body {
+  height: 100vh;
+  width: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  background-color: cornflowerblue;
+}
+
+#main-play-area {
+  background-color: black;
+  background-image: url(../imgs/spacer.png);
+  height: 600px;
+  width: 600px;
+}
+
+.player-shooter {
+  position: relative;
+  height: 100px;
+  width: 70px;
+  left: 20px;
+  top: 250px;
+}
